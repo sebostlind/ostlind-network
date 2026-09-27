@@ -16,15 +16,11 @@ const required = [
   ["email", "mailto:sebastian@ostlind.net"],
   ["email text", "sebastian@ostlind.net"],
   ["domain label", "ostlind.network"],
-  ["hero", "Östlind &amp; Co"],
-  ["audience", 'id="audience"'],
-  ["services", 'id="services"'],
-  ["approach", 'id="approach"'],
-  ["about", 'id="about"'],
-  ["contact", 'id="contact"'],
-  ["coaching", "Executive coaching"],
-  ["leadership", "Leadership consulting"],
-  ["psychology", "Organizational psychology"],
+  ["wordmark", "wordmark"],
+  ["hero", "organizational psychology, executive coaching, and leadership consulting"],
+  ["coaching", "executive coaching"],
+  ["leadership", "leadership consulting"],
+  ["psychology", "organizational psychology"],
   ["person", "Sebastian Östlind"],
   ["approach line", "thoughtful, practical, and confidential"],
   ["og image", "https://ostlind.network/logo.png"],
@@ -34,6 +30,7 @@ const forbidden = [
   ["www host", "www."],
   ["tel link", "tel:"],
   ["phone word", /phone/i],
+  ["footer", /<footer[\s>]/i],
 ];
 
 function run(command, args) {
