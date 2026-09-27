@@ -1,6 +1,6 @@
 # Contact
 
-Contact gives the email and the public domain. The email opens a mail draft. The domain is the visible label `ostlind.network`.
+The header email opens a mail draft. The closing line shows the public domain. There is no form and no footer.
 
 ## Sub-features
 
@@ -10,21 +10,20 @@ Contact gives the email and the public domain. The email opens a mail draft. The
 
 ## How to get to it (user POV)
 
-- Choose `Contact` in the header.
-- Or choose `Write to Sebastian` in the hero. That link uses the same mailto.
-- Or use the email in the footer.
+- Choose `sebastian@ostlind.net` in the header.
+- Or read `ostlind.network` in the second short paragraph.
 
 ## Driving it with verify.mjs
 
 Preconditions:
 
 - Preview is healthy at `http://127.0.0.1:4321/`.
-- `npm run verify` must report PASS for `email`, `email text`, `domain label`, `contact`, `absent www host`, `absent tel link`, and `absent phone word`.
+- `npm run verify` must report PASS for `email`, `email text`, `domain label`, `absent www host`, `absent tel link`, `absent phone word`, and `absent footer`.
 
-- **Open Contact.** Choose `Contact`. Run `curl -fsS http://127.0.0.1:4321/ -o artifacts/verify/index.html`. The HTML contains `id="contact"` and `mailto:sebastian@ostlind.net`.
-- **Read the addresses.** The contact list shows `sebastian@ostlind.net` and `ostlind.network`. The domain link href is `https://ostlind.network`.
-- **Confirm there is no phone.** Search the saved HTML for `tel:` and `phone`. Both are absent.
-- **Proof.** `artifacts/verify/mobile.png` shows the contact block on a 390-wide viewport when the capture is tall enough. The report file records the string checks even if you do not click mailto.
+- **Read the header.** Run `curl -fsS http://127.0.0.1:4321/ -o artifacts/verify/index.html`. The HTML contains `mailto:sebastian@ostlind.net` and the visible address `sebastian@ostlind.net`.
+- **Read the domain.** The closing paragraph shows `ostlind.network`. The link href is `https://ostlind.network`.
+- **Confirm there is no phone or footer.** Search the saved HTML for `tel:`, `phone`, and `<footer`. All three are absent.
+- **Proof.** The report file records those checks. Do not click the mailto link. The proof is the href.
 
 ## Gotchas
 

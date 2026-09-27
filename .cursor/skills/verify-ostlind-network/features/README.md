@@ -12,7 +12,7 @@ This directory is the source for checking the public one-page site. Read this in
 ## Driving conventions
 
 - Start from the top of the page.
-- Prefer the visible link text, the heading text, and the section ids.
+- Prefer the visible link text and the heading text.
 - Treat the curl commands as literal.
 - `npm run verify` is the scripted drive. The curls in each feature file are the hand drive.
 
@@ -33,6 +33,6 @@ Each feature file has an H1, one opening paragraph, and these H2 sections in ord
 
 ## Features
 
-- [Hero and navigation](./hero.md) covers the mark, the firm name, and the anchor links.
-- [Services](./services.md) covers the three named forms of client work.
-- [Contact](./contact.md) covers the email and the domain label.
+- [Hero and navigation](./hero.md) covers the mark, the wordmark, and the serif sentence.
+- [Practice](./services.md) covers the three forms of client work named in that sentence.
+- [Contact](./contact.md) covers the header email and the domain label.

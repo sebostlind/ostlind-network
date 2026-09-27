@@ -5,7 +5,7 @@ description: "Build and check the Östlind & Co Network one-page site. Use when 
 
 # Verify Östlind & Co Network
 
-The site is one static page. A user reads it in a browser and follows the mailto link or the anchor nav. Prove that path against `astro preview` of `dist/`, not against source files alone.
+The site is one static page. A user reads the header and the sentence, then follows the email in the header. Prove that path against `astro preview` of `dist/`, not against source files alone.
 
 ## Launch
 
@@ -42,9 +42,9 @@ curl -fsS http://127.0.0.1:4321/ -o artifacts/verify/index.html
 curl -fsS http://127.0.0.1:4321/logo.png -o artifacts/verify/logo.png
 ```
 
-Open `http://127.0.0.1:4321/` and use the anchor names in the header. The contact link is `mailto:sebastian@ostlind.net`.
+Open `http://127.0.0.1:4321/`. The header email is `mailto:sebastian@ostlind.net`.
 
-Stable handles are the heading text, the link text, and these ids: `top`, `main`, `audience`, `services`, `approach`, `about`, `contact`.
+Stable handles are the wordmark text, the heading text, the email link, and the ids `top` and `main`.
 
 ## Evidence
 
@@ -58,7 +58,7 @@ Stable handles are the heading text, the link text, and these ids: `top`, `main`
 
 A pass requires the report, both screenshots, and a zero failure count. The screenshots must show the white Ö in the header and the firm name. HTML checks alone are not enough for a visual change.
 
-The page must include the firm name, Sebastian Östlind, `sebastian@ostlind.net`, the visible label `ostlind.network`, and the five sections. It must not include `www.`, a `tel:` link, or the word phone.
+The page must include the firm name, Sebastian Östlind, `sebastian@ostlind.net`, and the visible label `ostlind.network`. It must not include `www.`, a `tel:` link, the word phone, or a footer.
 
 ## Cleanup
 

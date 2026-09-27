@@ -1,29 +1,28 @@
-# Services
+# Practice
 
-Services names the only three forms of client work: executive coaching, leadership consulting, and organizational psychology.
+The homepage sentence names the only three forms of client work. They are not separate pages or cards.
 
 ## Sub-features
 
-- `services-open` reaches the section from the header.
-- `services-three` shows those three headings and no extra service.
+- `practice-psychology` names organizational psychology.
+- `practice-coaching` names executive coaching.
+- `practice-leadership` names leadership consulting.
 
 ## How to get to it (user POV)
 
-- Open the site and choose `Services` in the header.
-- Or scroll to the `Services` heading.
+- Open the site and read the serif sentence under the header.
 
 ## Driving it with verify.mjs
 
 Preconditions:
 
 - Preview is healthy at `http://127.0.0.1:4321/`.
-- `npm run verify` must report PASS for `services`, `coaching`, `leadership`, and `psychology`.
+- `npm run verify` must report PASS for `hero`, `coaching`, `leadership`, and `psychology`.
 
-- **Open Services.** Choose `Services`. Run `curl -fsS http://127.0.0.1:4321/#services -o artifacts/verify/services.html`. The HTML contains `id="services"` and the heading `Services`.
-- **Read the three forms.** Stay in that section. The headings are `Executive coaching`, `Leadership consulting`, and `Organizational psychology`.
-- **Proof.** `artifacts/verify/desktop.png` from `npm run verify` includes the Services heading and the three names when the window is tall enough to contain them.
+- **Read the sentence.** Run `curl -fsS http://127.0.0.1:4321/ -o artifacts/verify/index.html`. The heading contains `organizational psychology`, `executive coaching`, and `leadership consulting`.
+- **Proof.** `artifacts/verify/desktop.png` shows that sentence. There is no services grid.
 
 ## Gotchas
 
-- The hash in the curl URL does not change the HTML. Assert `id="services"`, not a separate document.
-- Do not treat a passing hero check as a passing services check.
+- Do not look for a `Services` heading or for `id="services"`. Those are not on this page.
+- A passing logo check is not a passing practice check.
