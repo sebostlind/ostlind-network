@@ -32,7 +32,7 @@ const image = new URL("/logo.png", site.origin).href;
     <header class="site-header" id="top">
       <div class="inner">
         <a class="mark" href="#top">
-          <img src="/logo.png" width="44" height="44" alt={site.name} />
+          <img src="/logo.png" width="52" height="52" alt={site.name} />
         </a>
         <nav aria-label="On this page">
           <ul>
@@ -89,7 +89,12 @@ const image = new URL("/logo.png", site.origin).href;
     </main>
     <footer class="site-footer">
       <div class="inner">
-        <p>{site.name}</p>
+        <div class="footer-brand">
+          <a class="mark" href="#top" aria-label={site.name}>
+            <img src="/logo.png" width="36" height="36" alt="" />
+          </a>
+          <p>{site.name}</p>
+        </div>
         <p>
           <a href={mailto}>{site.email}</a>
         </p>
