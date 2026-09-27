@@ -1,0 +1,99 @@
+---
+import "@fontsource/source-serif-4/400.css";
+import "../styles/global.css";
+import { site } from "../site";
+
+const canonical = new URL("/", site.origin).href;
+const mailto = `mailto:${site.email}`;
+const image = new URL("/logo.png", site.origin).href;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{site.name}</title>
+    <meta name="description" content={site.description} />
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/logo.png" type="image/png" />
+    <meta name="theme-color" content="#000000" />
+    <meta property="og:title" content={site.name} />
+    <meta property="og:description" content={site.description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={image} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={site.name} />
+    <meta name="twitter:description" content={site.description} />
+    <meta name="twitter:image" content={image} />
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="site-header" id="top">
+      <div class="inner">
+        <a class="mark" href="#top">
+          <img src="/logo.png" width="44" height="44" alt={site.name} />
+        </a>
+        <nav aria-label="On this page">
+          <ul>
+            {
+              site.sections.map((section) => (
+                <li>
+                  <a href={`#${section.id}`}>{section.heading}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main id="main">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="inner">
+          <h1 id="hero-title">
+            <span class="line">Östlind &amp; Co</span>
+            <span class="line">Network</span>
+          </h1>
+          <p class="lead">{site.positioning}</p>
+          <a class="cta" href={mailto}>{site.cta}</a>
+        </div>
+      </section>
+      {
+        site.sections.map((section) => (
+          <section id={section.id} aria-labelledby={`${section.id}-title`}>
+            <div class="inner">
+              <h2 id={`${section.id}-title`}>{section.heading}</h2>
+              {section.paragraphs.map((paragraph) => (
+                <p>{paragraph}</p>
+              ))}
+              {section.services?.map((service) => (
+                <>
+                  <h3>{service.title}</h3>
+                  <p>{service.text}</p>
+                </>
+              ))}
+              {section.id === "contact" && (
+                <ul class="contact-links">
+                  <li>
+                    <a href={mailto}>{site.email}</a>
+                  </li>
+                  <li>
+                    <a href={site.origin}>{site.domainLabel}</a>
+                  </li>
+                </ul>
+              )}
+            </div>
+          </section>
+        ))
+      }
+    </main>
+    <footer class="site-footer">
+      <div class="inner">
+        <p>{site.name}</p>
+        <p>
+          <a href={mailto}>{site.email}</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
