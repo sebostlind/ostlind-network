@@ -24,3 +24,7 @@ Create a Pages project from this repository and use these settings.
 The site does not need environment variables.
 
 After the first successful deploy, attach the custom domain `ostlind.network` in the Pages project. Visible copy uses that apex name. Do not put `www` in the page text.
+
+## Check the build
+
+Run `npm run verify`. The command builds the site, serves `dist/`, and checks the page. The steps live in `.cursor/skills/verify-ostlind-network/SKILL.md`.
